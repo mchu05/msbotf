@@ -1,0 +1,19 @@
+Better than Getting started
+https://docs.botframework.com/en-us/node/builder/overview/#navtitle
+_______________________________
+http://www.garypretty.co.uk/2016/07/13/introduction-to-the-microsoft-bot-framework/
+http://www.garypretty.co.uk/2016/07/14/creating-your-first-bot-with-the-microsoft-bot-framework-part-1/
+http://www.garypretty.co.uk/2016/07/16/creating-your-first-bot-with-the-microsoft-bot-framework-part-2/
+
+
+EXAMPLES OF BOT:
+
+_______________________________
+https://docs.botframework.com/en-us/node/builder/guides/examples/
+https://github.com/Microsoft/BotBuilder-Samples/tree/master/Node/cards-RichCards
+
+Q and A maker with hookup to BF
+https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/
+
+CUSTOME SKIN FOR BOT FRAMEWORK VIA Directline:
+https://github.com/Microsoft/BotFramework-WebChat.git
