@@ -7,8 +7,10 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 });
 
 var connector = new builder.ChatConnector({
-	appId: process.env.MICROSOFT_APP_ID,
-	appPassword: process.env.MICROSOFT_APP_PASSWORD
+	// appId: process.env.MICROSOFT_APP_ID,
+	// appPassword: process.env.MICROSOFT_APP_PASSWORD
+	appId: "b09d85bd-a3bf-44b0-b75f-6b2afc10000ds",
+	appPassword: "jgm1TFxNFVwzCGgdZmKy1bG"
 });
 
 var bot = new builder.UniversalBot(connector);

@@ -17,3 +17,15 @@ https://docs.botframework.com/en-us/azure-bot-service/templates/qnamaker/
 
 CUSTOME SKIN FOR BOT FRAMEWORK VIA Directline:
 https://github.com/Microsoft/BotFramework-WebChat.git
+
+How to set up bot via azure etc..
+https://blog.powerupcloud.com/building-bots-using-microsoft-bot-framework-and-nodejs-604047ca15c
+
+
+
+COBE app stuff
+app id: b09d85bd-a3bf-44b0-b75f-6b2afc10000ds
+secret: jgm1TFxNFVwzCGgdZmKy1bG
+
+
+secret keys for embedding: SX3NWv9FxHs.cwA.LmM.peB8r9ImZbYn2wjz21koQTvVrfACwSD4gIM8PeNVaTI
