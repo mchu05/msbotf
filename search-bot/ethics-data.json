@@ -1,0 +1,72 @@
+  [{
+    "id":"0100",
+    "imageUrl":"https://placebear.com/g/200/323",
+    "title":"Speaking Up and Zero Tolerance for Retaliation",
+    "description":"We speak up about concerns knowing Accenture never tolerates retaliation.",
+    "longDescription":"Respect, fairness and shared ethical values are at the heart of Accenture’s culture and grounded in our core values. Making your conduct count is about fostering these values and describes behaviors that we expect from—and for—our people so that they can be at their best each day. There are five ways to make sure your conduct counts.",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Diversity","Inclusion", "Behavior"]
+  },
+  {
+    "id":"0101",
+    "imageUrl":"https://placebear.com/g/200/350",
+    "title":"Respect for the Individual",
+    "description":"We treat each other with respect",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Diversity","Inclusion"]
+  },
+  {
+    "id":"0102",
+    "imageUrl":"https://placebear.com/g/200/300",
+    "title":"We Are Ambassadors of Accenture",
+    "description":"We are proud to be ambassadors of Accenture, and we act accordingly.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["External Facing","Public Activitities"]
+  },
+  {
+    "id":"0103",
+    "imageUrl":"https://placebear.com/g/195/300",
+    "title":"Meritocracy and Non-Discrimination",
+    "description":"We apply our principle of meritocracy when we make decisions about our people.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Diversity","Inclusion"]
+  },
+  {
+    "id":"0104",
+    "imageUrl":"https://placebear.com/g/203/300",
+    "title":"Personal Conflicts of Interest",
+    "description":"We ensure our personal interests and relationships don't create conflicts for Accenture.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["External Facing","Public Activitities", "Gifts", "Bribes"]
+  },
+  {
+    "id":"0200",
+    "imageUrl":"https://placebear.com/g/201/300",
+    "title":"Anticorruption",
+    "description":"We do not give or accept bribes—including inappropriate gifts or entertainment—and we get approval before offering any gifts or entertainment to Public Officials.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Gifts", "Bribes", "government official"]
+  },
+  {
+    "id":"0201",
+    "imageUrl":"https://placebear.com/g/202/300",
+    "title":"Anticorruption",
+    "description":"We do not use or allow third parties to give bribes or make questionable payments on our behalf, which is why we only work with approved Business Intermediaries—companies or individuals that we expect to interact with our clients or represent Accenture before a government body.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Gifts", "Bribes", "government official"]
+  },
+  {
+    "id":"0202",
+    "imageUrl":"https://placebear.com/g/203/300",
+    "title":"Anticorruption",
+    "description":"We follow Accenture’s procedures on interacting with Public Officials and rules regarding political contributions and campaign activities.",
+    "longDescription":"",
+    "links":["https://in.accenture.com/codeofbusinessethics/cobe-page-how-to-raise-concerns/"],
+    "tags":["Gifts", "Bribes"]
+  }]
