@@ -1,5 +1,5 @@
 {
-  "name": "waterfallbot",
+  "name": "mchubot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,9 @@
     "botbuilder-azure": "3.0.2"
   },
   "devDependencies": {
-      "restify": "^4.3.0"
+      "restify": "^4.3.0",
+      "botbuilder": "^3.7.0",
+      "request": "^2.78.0"
   },  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
