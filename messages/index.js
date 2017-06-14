@@ -1,5 +1,5 @@
-require('./config.js')();
-require('./connectorSetup.js')();
+require('./config.js')();  //searchquery
+require('./connectorSetup.js')(); 
 require('./searchHelpers.js')();
 require('./dialogs/results.js')(); 
 require('./dialogs/musicianExplorer.js')();
