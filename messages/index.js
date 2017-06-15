@@ -24,7 +24,7 @@ bot.localePath(path.join(__dirname, './locale'));
 
 
 var searchQueryStringBuilder = function (query) {
-    return queryString + query;
+    return queryString + query + "~5"; // ~5 is fuzzy search
 }
 
 var performSearchQuery = function (queryString, callback) {
