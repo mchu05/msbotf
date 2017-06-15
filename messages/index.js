@@ -3,6 +3,10 @@ var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var path = require('path');
 
+require('./dialogs/results.js')(); 
+require('./dialogs/musicianExplorer.js')();
+require('./dialogs/musicianSearch.js')();
+
 var useEmulator = (process.env.NODE_ENV == 'development');
 
 var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
@@ -24,7 +28,7 @@ bot.dialog('/', [
 bot.dialog('/promptButtons', [
     function (session) {
         var choices = ["Explore", "Search"]
-        builder.Prompts.choice(session, "How would you like me to interact with you?", choices);
+        builder.Prompts.choice(session, "Hi how would you like me to help?", choices);
     },
     function (session, results) {
         if (results.response) {
@@ -32,10 +36,10 @@ bot.dialog('/promptButtons', [
             // route to corresponding dialogs
             switch (selection) {
                 case "Explorer":
-                    session.replaceDialog('/carousel');
+                    session.replaceDialog('/explore');
                     break;
                 case "Search":
-                    session.replaceDialog('/searching');
+                    session.replaceDialog('/search');
                     break;
                 default:
                     session.reset('/');
@@ -45,110 +49,29 @@ bot.dialog('/promptButtons', [
     }
 ]);
 
-bot.dialog('/carousel', [
-    function (session) {
-        var msg = new builder.Message(session)
-        .attachmentLayout(builder.AttachmentLayout.carousel)
-        .attachments([
-            new builder.HeroCard(session)
-                .title("Data Privacy")
-                .subtitle("We process and protect personal data in compliance with data privacy laws Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis dolor, viverra sit amet scelerisque sed, commodo a lectus. \n\n&nbsp;\n\n [Read More](https://www.accenture.com)")
-                .images([
-                    builder.CardImage.create(session, "http://www.rd.com/wp-content/uploads/sites/2/2016/04/01-cat-wants-to-tell-you-laptop.jpg")
-                        .tap(builder.CardAction.showImage(session, "http://www.rd.com/wp-content/uploads/sites/2/2016/04/01-cat-wants-to-tell-you-laptop.jpg"))
-                ])
-                .buttons([
-                    builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle", "Read More")
-                ]),
-            new builder.HeroCard(session)
-                .title("Personal Conflicts of Interests")
-                .subtitle("We ensure our personal interests and relationships don't create conflicts for Accenture...")
-                .images([
-                    builder.CardImage.create(session, "http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg")
-                        .tap(builder.CardAction.showImage(session, "http://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-funny-cat-pictures-5.jpg"))
-                ])
-                .buttons([
-                    builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Pike_Place_Market", "Read More")
-                ]),
-            new builder.HeroCard(session)
-                .title("Information Securitiessss")
-                .subtitle("We protect confidential information of Accenture, clients and others from unauthorized use or disclosure...")
-                .images([
-                    builder.CardImage.create(session, "http://intersystek.com/wp-content/uploads/2015/04/pic8.jpg")
-                        .tap(builder.CardAction.showImage(session, "http://intersystek.com/wp-content/uploads/2015/04/pic8.jpg"))
-                ])
-                .buttons([
-                    builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/EMP_Museum", "Read More")
-                ]),
-            new builder.HeroCard(session)
-                .title("Information Security")
-                .subtitle("We follow Accenture’s requirements for protecting and using information, devices and technology belonging to Accenture, clients, suppliers and other parties...")
-                .images([
-                    builder.CardImage.create(session, "http://ksassets.timeincuk.net/wp/uploads/sites/46/2014/02/Ballet-Dancer.jpg")
-                        .tap(builder.CardAction.showImage(session, "http://ksassets.timeincuk.net/wp/uploads/sites/46/2014/02/Ballet-Dancer.jpg"))
-                ])
-                .buttons([
-                    builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/EMP_Museum", "Read More"),
-                    builder.CardAction.imBack(session, "topic:102", "Tell me more about this topic")
-                ])
-        ]); 
-        session.send(msg);
+// bot.dialog('/search', [
+//         function (session) {
+//             //Prompt for string input
+//             builder.Prompts.text(session, "Type in something you are searching for");
+//         },
+//         function (session, results) {
+//             //Sets name equal to resulting input
+//             var name = results.response;
 
-        var msg2 =  new builder.Message(session)
-        .attachments([
-            new builder.HeroCard(session)
-            .text("Was this helpful?")
-            .buttons([
-                builder.CardAction.imBack(session, "None of These", "None of these"),
-                builder.CardAction.imBack(session, "Lets chat about something else", "Lets chat about something else")
-            ])
-        ]);
+//             var queryString = searchQueryStringBuilder('search= ' + name);
+//             performSearchQuery(queryString, function (err, result) {
+//                 if (err) {
+//                     console.log("Error when searching: " + err);
+//                 } else if (result && result['value'] && result['value'][0]) {
+//                     //If we have results send them to the showResults dialog (acts like a decoupled view)
+//                     session.replaceDialog('/showResults', { result });
+//                 } else {
+//                     session.endDialog("Nothing by \'" + name + "\' found");
+//                 }
+//             })
+//         }
+// ]);
 
-        builder.Prompts.choice(session, msg2, ["topic:102", "Lets chat about something else", "None of These"]);
-    },
-    function (session, results) {
-        var action, item;
-        //console.log(results.response.entity);
-
-        if(results.response.entity.search("topic") != -1){
-            var kvPair = results.response.entity.split(':');
-            switch (kvPair[0]) {
-                case 'topic':
-                    action = 'selected';
-                    break;
-            }
-            switch (kvPair[1]) {
-                case '100':
-                    item = "Data Privacy";
-                    break;
-                case '101':
-                    item = "Personal Conflicts of Interests";
-                    break;
-                case '102':
-                    item = "Information Security";
-                    break;
-            }
-            session.endDialog('k you %s a topic about %s is all about following Accenture’s requirements for protecting and using information, devices and technology belonging to Accenture, clients, suppliers and other parties', action, item);
-        } 
-
-        else if (results.response.entity.toLowerCase().search("none") != -1){
-            //replace dialog with carousel 2
-            //session.replaceDialog("/carousel");
-            session.send("Ok I have some more results");
-            session.replaceDialog("/carousel2");
-        }
-
-        else if (results.response.entity.search("something else") != -1){
-            //replace dialog with carousel 2
-            session.send("Let's try this again");
-            session.replaceDialog("/beginQuestion");
-        }
-        else {
-            session.endDialog("Sorry I didn't really understand but cool story");
-            //session.endDialog('You %s "%s"', action, item);
-        }
-    }    
-]);
 
 
 if (useEmulator) {
