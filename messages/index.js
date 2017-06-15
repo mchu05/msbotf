@@ -31,7 +31,7 @@ bot.dialog('/promptButtons', [
             var selection = results.response.entity;
             // route to corresponding dialogs
             switch (selection) {
-                case "Explorer":
+                case "Explore":
                     session.replaceDialog('/explore');
                     break;
                 case "Search":
