@@ -17,14 +17,14 @@ var searchName = process.env.AZURE_SEARCH_NAME ? process.env.AZURE_SEARCH_NAME :
 var indexName = process.env.INDEX_NAME ? process.env.AZURE_SEARCH_NAME : "ethicsindex";
 var searchKey = process.env.INDEX_NAME ? process.env.AZURE_SEARCH_KEY : "1B00A9C8F4FE8B7970E4249C12E141E4";
 
-var  queryString = 'https://' + searchName + '.search.windows.net/indexes/' + indexName + '/docs?api-key=' + searchKey + '&api-version=2015-02-28&';
+var  queryString = 'https://' + searchName + '.search.windows.net/indexes/' + indexName + '/docs?api-key=' + searchKey + '&api-version=2015-02-28&queryType=full&;
 
 var bot = new builder.UniversalBot(connector);
 bot.localePath(path.join(__dirname, './locale'));
 
 
 var searchQueryStringBuilder = function (query) {
-    return queryString + query + "~5"; // ~5 is fuzzy search
+    return queryString + query + "~"; // ~ is fuzzy search
 }
 
 var performSearchQuery = function (queryString, callback) {
